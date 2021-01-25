@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'IBM plex sans Var';
+    src: url('./IBMPlexSansVar-Roman.woff2') format('woff2-variations');
+    font-style: normal;
+    font-weight: 100 700;
+    font-display: block;
+  }
+  
+  @font-face {
+    font-family: 'PlasticGX';
+    src: url('./PlasticGX.ttf') format('woff2-variations');
+    font-style: normal;
+    font-weight: 0 1000;
+    font-display: block;
+  }
+  
+  @font-face {
+    font-family: 'Amstelvar Alpha Var';
+    src: url('./AmstelvarAlpha-VF.woff2') format('woff2-variations');
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: block;
+  }
+  
+  
+  :root {
+    --font-amstelvar: 'Amstelvar Alpha Var';
+    --font-plastic: 'PlasticGX';
+    --font-ibm: 'IBM plex sans Var';
+  }

@@ -2,7 +2,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("src/fonts/css")
 
-  // eleventyConfig.addPassthroughCopy({ "src/fonts": "fonts" });
+  eleventyConfig.addPassthroughCopy({ "src/fonts": "fonts" });
 
   return {
     dir: {
