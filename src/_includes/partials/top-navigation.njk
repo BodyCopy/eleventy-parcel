@@ -1,0 +1,30 @@
+<nav class="top-navigation">
+    <div slot="wordmark" class="word-mark">
+        <a class="nav-menu__item" href="/index.html">JON.MCGUGAN</a>
+    </div>
+    <div slot="menu" class="nav-menu">
+        <div class="nav-menu__item nav-menu__catagory">
+            <h4 class="nav-menu__catagory-title">Blog</h4>
+            <ul class="nav-menu__catagory-items">
+                {% for page in collections.page %}
+                    <li class="">
+                        <a class="" href="{{ page.url }}">{{ page.data.pageTitle }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="nav-menu__item nav-menu__catagory">
+            <h4 class="nav-menu__catagory-title">Work</h4>
+            <ul class="nav-menu__catagory-items">
+                {% for project in collections.project %}
+                    <li class="">
+                        <a class="" href="{{ project.url }}">{{ project.data.pageTitle }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <h4 class="nav-menu__item"><a>About</a></h4>
+        <h4 class="nav-menu__item"><a>Contact</a></h4>
+    </div>
+
+</nav>

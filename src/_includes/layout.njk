@@ -13,10 +13,11 @@
       {% set showHomeLink = true %}
     {% endif %}
 
-    {% include "./partials/header.njk" %}
-
+    {# {% include "./partials/header.njk" %} #}
+    {% include "./partials/top-navigation.njk" %}
+    <main>
     {% block content %}{% endblock %}
-
+    </main>
     {% include "./partials/footer.njk" %}
     <!--JS-->
     {% if version.js | length == 0 %}

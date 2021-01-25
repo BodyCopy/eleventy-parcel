@@ -3,11 +3,15 @@
 @import '02-base/reset';
 @import '02-base/typography';
 @import '02-base/layout';
+@import '02-base/icons';
 
 @import '03-objects/richtext';
 
-@import '04-components/header';
+@import '04-components/nav';
 @import '04-components/footer';
-@import '04-components/hero';
 
 @import '05-utilities/utils';
+
+@import '06-templates/project-template';
+
+@import '07-animations/animations';

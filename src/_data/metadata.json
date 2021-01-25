@@ -1,11 +1,10 @@
 {
-  "title": "Eleventy-Parcel",
+  "title": "Jon Mcgugan Design",
   "url": "https://eleventy-parcel.netlify.app/",
-  "description": "A basic Eleventy (11ty) starter project with Parcel JS",
+  "description": "The Personal Website of Jon Mcgugan",
   "author": {
-    "name": "Michelle Barker",
-    "email": "contact@michellebarker.co.uk"
+    "name": "Jon Mcgugan",
+    "email": "jonmcgugan@outlook.com"
   },
-  "img": "og-image.jpg",
-  "githubUrl": "https://github.com/mbarker84/eleventy-parcel"
+  "img": "og-image.jpg"
 }

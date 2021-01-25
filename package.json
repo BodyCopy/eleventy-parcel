@@ -40,5 +40,7 @@
     "stylelint-prettier": "^1.1.2",
     "svg-sprite-generator": "^0.0.7"
   },
-  "dependencies": {}
+  "dependencies": {
+    "lit-element": "^2.4.0"
+  }
 }
