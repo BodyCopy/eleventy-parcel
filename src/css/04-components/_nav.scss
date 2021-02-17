@@ -10,7 +10,7 @@
   background: var(--nav-color);
   transition: transform 360ms ease;
   will-change: transform;
-  z-index: 1;
+  z-index: 9999;
 
   &.up {
     transform: translateY(-100%);

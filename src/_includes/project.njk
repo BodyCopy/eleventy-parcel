@@ -1,11 +1,30 @@
 {% extends "./layout.njk" %}
 
 {% block content %}
-<progress-bar></progress-bar>
-  <div class="page-content">
-    <div class="container o-richtext">
-      <h1>{{ pageTitle }}</h1>
+  <con-blog-handler progress-bar footnotes class="project-content">
+  {% if pageHeader %}
+    <header class="page-header"style="background-image:url('{{pageHeader.image}}')">
+      {% if pageHeader.title %}
+        <h1>{{pageHeader.title}}</h1>
+      {% endif %}
+    </header>
+  {% endif %}
+    <section class="intro section-grid">
+      <h1 class="section-heading">
+        <span class="sup-heading">{{tags}}</span>{{pageTitle}}
+      </h1>
+      <div class="date-wrapper">{{project.date}}</div>
+      {% if project.intro %}
+        <div class="body-copy">
+          <p>{{project.intro}}
+          </p>
+        </div>
+      {% endif %}
+    </section>
+    <article class="page-article">
       {{ content | safe }}
-    </div>
-  </div>
+    </article>
+
+    {% include "./partials/relatedContent.njk" %}
+  </con-blog-handler>
 {% endblock %}

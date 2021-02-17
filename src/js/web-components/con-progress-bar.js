@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit-element'
 
-export class ProgressBar extends LitElement {
+export class ConProgressBar extends LitElement {
   constructor() {
     super()
   }
@@ -10,7 +10,7 @@ export class ProgressBar extends LitElement {
       .progress-bar {
         position: fixed;
         top: 0;
-        z-index: 0;
+        z-index: 9998;
         display: block;
         height: 0.25rem;
         width: 100%;

@@ -8,10 +8,27 @@ body {
   font-display: swap;
 }
 
+header.page-header{
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80vh;
+}
+
 main{
   background-color: blanchedalmond;
   width: 100%;
+  min-height: calc(100vh - 58px); //nav-height
+  z-index: 1;
 }
+
+article.page-article{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 200px;
+}
+
+//default repo styles below
 
 .container {
   max-width: 60rem;
@@ -31,3 +48,12 @@ main{
     padding: 10rem 0;
   }
 }
+
+  .sup-heading {
+    font-size: 0.3em;
+    line-height: 1em;
+    font-variation-settings: 'wght'400;
+    display: block;
+    margin-left: 0.18em;
+    margin-bottom: 1rem;
+  }

@@ -13,7 +13,7 @@ export class ConFooter extends LitElement {
     return css`
       :host{
         height: 100vh;
-        z-index: -1;
+        z-index: 0;
         width: 100%;
       }
 

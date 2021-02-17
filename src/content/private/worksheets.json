@@ -1,0 +1,5 @@
+{
+  "layout": "page.njk",
+  "permalink": "WorkSheets/{{ pageTitle | slug }}/index.html",
+  "tags": "worksheet"
+}

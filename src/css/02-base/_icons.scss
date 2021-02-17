@@ -1,5 +1,9 @@
 svg{
     height: auto;
     max-width: 100%;
-    overflow: hidden;
+    overflow: visible;
+}
+
+symbol{
+    overflow: visible;
 }
