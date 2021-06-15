@@ -7,14 +7,25 @@ export class ConButton extends LitElement {
 
   static get styles() {
     return css`
+      :host {
+        display: inline-block;
+      }
       button {
+        font-family: inherit;
+        font-size: 1rem;
+        font-weight: 600;
         padding: 0.5rem 1rem;
-        font-family: var(--master-font);
         background-color: orange;
-        border: 1px solid black;
+        border: 2px solid black;
+
+        transition: transform 60ms ease-in-out;
       }
       button:hover {
-        filter: brightness(0.8);
+        filter: brightness(0.9);
+      }
+      button:active{
+        transform: translateY(1px);
+        box-shadow: inset 0 0 3px #000;
       }
     `
   }

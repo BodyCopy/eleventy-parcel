@@ -1,9 +1,10 @@
 import { LitElement, html, css } from 'lit-element'
 
-export class PlaceHolder extends LitElement {
+export class ConForm extends LitElement {
   static get properties() {
     return {
       myProp: { type: String },
+      name: { attribute: 'name'}
     }
   }
 
@@ -13,11 +14,21 @@ export class PlaceHolder extends LitElement {
   }
 
   static get styles() {
-    return css``
+    return css`
+    slot{
+      display: flex;
+      align-items: flex-start;
+    }
+    ::slotted(*){
+      margin: 0;
+    }
+    `
   }
 
   render() {
-    return html`<div>element name works!</div>`
+    return html`<form name="${this.name}">
+    <slot></slot>
+    </form>`
   }
 
   firstUpdated() {}

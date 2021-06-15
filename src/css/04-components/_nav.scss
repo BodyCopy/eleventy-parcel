@@ -1,11 +1,20 @@
+.word-mark{
+  font-size: 2.4rem;
+  font-variation-settings: 'wght' 540;
+  &-text{
+    font-size: inherit;
+  }
+}
+
 .top-navigation {
   --nav-color: whitesmoke;
   display: flex;
   position: sticky;
   top: 0;
   flex-direction: row;
+  align-items: center;
   height: max-content;
-  padding: 0.5rem 2rem;
+  padding: 0.28rem 2rem 0.25rem 2rem;
   width: 100%;
   background: var(--nav-color);
   transition: transform 360ms ease;
@@ -15,9 +24,15 @@
   &.up {
     transform: translateY(-100%);
   }
+
+  & a{
+    text-decoration: none;
+  }
+
 }
 
 .nav-menu {
+  font-variation-settings: 'wght' 400;
   margin-left: auto;
   display: flex;
   gap: 2rem;
@@ -25,8 +40,13 @@
   &__catagory {
     position: relative;
     z-index: 1;
+    
+    &-title{
+      font-variation-settings: 'wght' 400;
+    }
 
     &-items {
+      font-variation-settings: 'wght' 400;
       position: absolute;
       visibility: hidden;
       display: flex;

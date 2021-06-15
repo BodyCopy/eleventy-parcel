@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit-element'
 import {
-  createObserverWithCallback,
+  CreateObserverWithCallback,
   ObserverOptions,
 } from '../helpers/intersectionObserverHelpers'
 
@@ -65,7 +65,7 @@ export class ConFooter extends LitElement {
 
     let footerRect = footer.getBoundingClientRect().height
     let footerFixedOptions = new ObserverOptions(null,0,`${footerRect}px 0px ${footerRect * 2}px 0px`);
-    createObserverWithCallback(
+    CreateObserverWithCallback(
       footerWatcher,
       (e) => {
         makeFixed(e)

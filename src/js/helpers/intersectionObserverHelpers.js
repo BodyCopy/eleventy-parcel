@@ -6,12 +6,12 @@ export class ObserverOptions {
     }
   }
   
-  function createObserver(element, run, options) {
+  export const CreateObserver = (element, run, options) => {
     let observer = new IntersectionObserver(run, options);
     observer.observe(element);
   }
   
-  export const createObserverWithCallback = (element, callback, options) => {
+  export const CreateObserverWithCallback = (element, callback, options) => {
     let observer = new IntersectionObserver((entries, observer) => {
       entries.forEach((e) => {
         callback(e, observer);

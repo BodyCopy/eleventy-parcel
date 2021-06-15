@@ -1,29 +1,19 @@
 ---
-pageTitle: 'Buy Bitcoin'
+pageTitle: 'Absence - Ability'
 pageHeader:
-    image: '/og-image.jpg'
-    title: 'Ability Absence'
+  image: '/og-image.jpg'
+  title: 'Goodbye'
 project:
-    title: 'Notion-mfg'
-    date: '00/22/11'
-    intro: 'It was the year 2525 and man was still alive. They thought he would live a million years unfortunatly it was only two'
-tag: 'fridge'
-sections: 
-   - title: 'Hello'
-     content: "This is <con-cite footnote='a red fruit or vegtable idk tbh'>Tomatoes</con-cite> how we do it it's Friday Night and the parties here on the west side."
-   - title: 'Hello' 
-     content: 'This is how we do it its Friday <con-cite footnote="It cost a lot of money">Bitcoin</con-cite><con-cite footnote="a name of a till man">Tillmans</con-cite>Night and the parties here on the west side.'
-
-
+  title: 'Notion-mfg'
+  date: '00/22/11'
+  intro: 'It was the year 2525 and man was still alive. They thought he would live a million years unfortunatly it was only two'
 ---
 
-{% for section in sections %}
-    <section class="section-grid">
-        <h1 class="section-heading">{{section.title}}</h1>
-        <svg class="blog-arrow" xmlns="http://www.w3.org/2000/svg" width="30" height="30">
-            <use href="#arrow"/>
-        </svg>
-        <p class="body-copy">{{section.content | safe}}</p>
-    </section>
-{% endfor %}
-<h1>{{sections.one.title}}</h1>
+<section class="section-grid">
+  <svg class="blog-arrow" xmlns="http://www.w3.org/2000/svg" width="30" height="30">
+    <use href="#arrow"/>
+  </svg>
+  <div class="body-copy">This is <con-highlight>This is Important Information</con-highlight> how we do it its Friday <con-cite footnote="It cost a lot of money">Bitcoin</con-cite>
+    <con-cite footnote="a name of a till man">Tillmans</con-cite>Night and the parties here on the west side.</div>
+  <div>text: "This is <con-cite footnote='a red fruit or vegtable idk tbh'>Tomatoes</con-cite> how we do it it's Friday Night and the parties here on the west side</div>
+</section>

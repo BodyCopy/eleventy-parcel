@@ -5,7 +5,7 @@
   {% if pageHeader %}
     <header class="page-header"style="background-image:url('{{pageHeader.image}}')">
       {% if pageHeader.title %}
-        <h1>{{pageHeader.title}}</h1>
+        <h1>{{pageHeader.title | safe}}</h1>
       {% endif %}
     </header>
   {% endif %}

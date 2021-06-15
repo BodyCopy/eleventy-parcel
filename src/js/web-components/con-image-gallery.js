@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit-element'
 
-export class PlaceHolder extends LitElement {
+export class ConImageGallery extends LitElement {
   static get properties() {
     return {
       myProp: { type: String },

@@ -1,0 +1,363 @@
+---
+layout: project.njk
+pageTitle: 'CSS Looper'
+tags: 'project'
+---
+
+<style>
+    .animation-wrapper {
+        background-color: white;
+        border: 2px solid black;
+        height: 240px;
+        padding: 2rem;
+        display: grid;
+    }
+
+    #loader {
+        height: 100%;
+        width: auto;
+        margin: auto;
+    }
+
+    #loader > g {
+    transform-origin: center center;
+    }
+</style>
+
+<div class="animation-wrapper">
+    <svg
+        id="loader"
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="32"
+        viewBox="0 0 32 32"
+      >
+        <g id="inner-right">
+            <rect width="32" height="32" fill="none"/>
+            <path
+            d="M23.3,22.6A7.6,7.6,0,0,1,22,24.3c2.4-.3,5.8-3.1,5.8-8.3A10.1,10.1,0,0,0,16.1,6C23.3,7.2,26.9,16.4,23.3,22.6Z"
+/>
+        </g>
+        <g id="inner-left">
+            <rect width="32" height="32" fill="none"/>
+            <path
+            d="M6.2,15.1C4.1,26,16.2,31.7,23.9,24.5c-7.8,4.3-19.1-3.1-16.7-12A13.9,13.9,0,0,0,6.2,15.1Z"
+/>
+        </g>
+        <g id="outer-right">
+            <rect width="32" height="32" fill="none"/>
+            <path
+            d="M15.4,1.3A17.2,17.2,0,0,1,32,14.6,13.2,13.2,0,0,0,14.4,1.3Z"
+/>
+        </g>
+        <g id="outer-left">
+            <rect width="32" height="32" fill="none"/>
+            <path
+            d="M1.4,16.3A15.2,15.2,0,0,1,4.5,7.1C-3.6,13.5,0,26.8,8.9,29.4A15.8,15.8,0,0,1,1.4,16.3Z"
+/>
+        </g>
+        <g id="center">
+            <path
+            d="M15.4,2.2c-6.2,0-13.1,6-13.1,14.1S10.6,31.4,18,31.4s13.4-7.2,13.4-13.7A16.1,16.1,0,0,0,15.4,2.2Zm3.9,26A11,11,0,0,1,5,17.4C5,10.8,11,4.9,17.8,4.9A11,11,0,0,1,28.7,16,13,13,0,0,1,19.3,28.2Z"
+/>
+            <rect width="32" height="32" fill="none"/>
+            <!-- <circle cx="16" cy="16" r="2" style="fill:blue"/> -->
+        </g>
+    </svg>
+</div>
+
+<con-form name="svg-code">
+    <con-textarea name="svg-code" placeholder="Add Number"></con-textarea>
+    <con-button>Submit</con-button>
+</con-form>
+<con-form name="animation-controls">
+    <con-input-field placeholder="Add Number"></con-input-field>
+    <con-input-field placeholder="Add Number"></con-input-field>
+    <con-input-field placeholder="Add Number"></con-input-field>
+    <con-input-field placeholder="Add Number"></con-input-field>
+    <con-button>Submit</con-button>
+</con-form>
+<script>
+    //color
+    (function wrapper2() {
+
+    {# let svgCode = document.forms.['svg-code']; #}
+    let svgCode = document.querySelector('[name="svg-code"]');
+    svgCode.addEventListener('button-clicked',()=>{console.log('we a form now')});
+    console.log(svgCode);
+
+        let spinColor = "orange";
+
+        let MSYellow = "#f3dc00";
+        let MSTeal = "#23bbb8";
+        let MSCyan = "#00565f";
+
+        let myEase = "power1.inOut";
+        let myDuration = 3;
+
+        function revs(amount) {
+            return 360 * amount;
+        }
+
+        //animationDuration can more accurately be refered to as LoopDuration as it's purpose is the create delays both before
+        // and after an animation would normally loop using @keyframes instead of animationDelay
+
+        const loopDuration = 2.666;
+        const colorSwap = "orange";
+
+        function setUpAnimation(loopDuration) {
+            let wrapper2 = document.querySelector(".animation-wrapper");
+            let innerRight = wrapper2.querySelector("#inner-right");
+            let innerLeft = wrapper2.querySelector("#inner-left");
+            let outerRight = wrapper2.querySelector("#outer-right");
+            let outerLeft = wrapper2.querySelector("#outer-left");
+            let center = wrapper2.querySelector("#center");
+            let loader = wrapper2.querySelector("#loader");
+
+            const animationElements = [];
+            animationElements.push(innerRight, innerLeft, outerRight, outerLeft, center);
+
+            let innerRightAnimation,
+                innerLeftAnimation,
+                outerRightAnimation,
+                outerLeftAnimation,
+                centerAnimation,
+                loaderAnimation;
+
+            //innerRight
+            innerRightAnimation = new Keyframes({
+                elementRef: innerRight,
+                animationName: "innerRight",
+                property: {
+                    type: "transform",
+                    from: "rotate(0deg)",
+                    to: "rotate(1080deg)"
+                },
+                colorChange: {
+                    from: "var(--MSYellow)",
+                    to: colorSwap
+                },
+                animationDuration: loopDuration,
+                animationLength: loopDuration * 0.7333,
+                animationDelay: loopDuration * 0.148,
+                animationEase: "ease"
+            });
+
+            innerRight.style.animation = `${innerRightAnimation.animation}`;
+
+            //innerLeft
+
+            innerLeftAnimation = new Keyframes({
+                elementRef: innerLeft,
+                animationName: "innerLeft",
+                property: {
+                    type: "transform",
+                    from: "rotate(0deg)",
+                    to: "rotate(1440deg)"
+                },
+                colorChange: {
+                    from: "var(--MSTeal)",
+                    to: colorSwap
+                },
+                animationDuration: loopDuration,
+                animationLength: loopDuration * 0.9,
+                animationDelay: 0,
+                animationEase: "ease"
+            });
+
+            innerLeft.style.animation = `${innerLeftAnimation.animation}`;
+
+            //center
+
+            centerAnimation = new Keyframes({
+                elementRef: center,
+                animationName: "center",
+                property: {
+                    type: "transform",
+                    from: "rotate(0deg)",
+                    to: "rotate(1080deg)"
+                },
+                colorChange: {
+                    from: "var(--MSCyan)",
+                    to: colorSwap
+                },
+                animationDuration: loopDuration,
+                animationLength: loopDuration * 0.866,
+                animationDelay: loopDuration * 0.133
+            });
+
+            center.style.animation = `${centerAnimation.animation}`;
+
+            //outerRight
+
+            outerRightAnimation = new Keyframes({
+                elementRef: outerRight,
+                animationName: "outerRight",
+                property: {
+                    type: "transform",
+                    from: "rotate(0deg)",
+                    to: "rotate(720deg)"
+                },
+                colorChange: {
+                    from: "var(--MSYellow)",
+                    to: colorSwap
+                },
+                animationDuration: loopDuration,
+                animationLength: loopDuration * 0.866,
+                animationDelay: loopDuration * 0.2666
+            });
+
+            outerRight.style.animation = `${outerRightAnimation.animation}`;
+
+            //outerLeft
+
+            outerLeftAnimation = new Keyframes({
+                elementRef: outerLeft,
+                animationName: "outerLeft",
+                property: {
+                    type: "transform",
+                    from: "rotate(0deg)",
+                    to: "rotate(720deg)"
+                },
+                colorChange: {
+                    from: "var(--MSTeal)",
+                    to: colorSwap
+                },
+                animationDuration: loopDuration,
+                animationLength: loopDuration * 0.866,
+                animationDelay: loopDuration * 0.2
+            });
+
+            outerLeft.style.animation = `${outerLeftAnimation.animation}`;
+
+            //innerRight
+            loaderAnimation = new Keyframes({
+                elementRef: loader,
+                animationName: "loader",
+                property: {
+                    type: "transform",
+                    from: "rotate(0deg)",
+                    to: "rotate(1080deg)"
+                },
+                animationDuration: 16,
+                animationLength: 16,
+                animationDelay: 0,
+                animationEase: "ease"
+            });
+
+            // loader.style.animation = `${loaderAnimation.animation}`;
+
+            //end
+
+            let styles = document.createElement("style");
+            styles.innerHTML = `
+    ${innerRightAnimation.keyframes}
+    ${innerLeftAnimation.keyframes}
+    ${centerAnimation.keyframes}
+    ${outerRightAnimation.keyframes}
+    ${outerLeftAnimation.keyframes}
+     ${outerLeftAnimation.keyframes}
+  `;
+
+            document
+                .body
+                .appendChild(styles);
+        }
+
+        class Keyframes {
+            constructor({
+                elementRef,
+                animationName,
+                property,
+                colorChange = {
+                    from: "blue",
+                    to: "red"
+                },
+                animationDuration,
+                animationLength,
+                animationDelay,
+                animationEase = "ease"
+            }) {
+                this.elementRef = elementRef;
+                this.animationDuration = animationDuration;
+                this.animationLength = animationLength;
+                this.animationDelay = animationDelay;
+                this.animationName = animationName;
+                this.animationEase = animationEase;
+                this.property = property;
+                this.colorChange = colorChange;
+            }
+
+            startProperty() {
+                let startTime = this.animationDuration - this.animationDelay;
+                console.log(this.colorChange.from);
+                return Math.ceil(100 - (startTime / this.animationDuration) * 100);
+            }
+            endProperty() {
+                let startTime = this.animationDuration - this.animationLength;
+                return Math.ceil(100 - (startTime / this.animationDuration) * 100);
+            }
+
+            get keyframes() {
+                return `@keyframes ${this
+                    .animationName}{
+      0%{
+        fill: ${this
+                    .colorChange
+                    .from};
+      }
+
+      ${this
+                    .startProperty()}%{
+        ${this
+                    .property
+                    .type}: ${this
+                    .property
+                    .from};
+        fill: ${this
+                    .colorChange
+                    .from};
+      }
+
+      ${this
+                    .endProperty() - 18}%{
+        fill: ${this
+                    .colorChange
+                    .to};
+        ;
+      }
+
+      ${this
+                    .endProperty()}%{
+        ${this
+                    .property
+                    .type}: ${this
+                    .property
+                    .to};
+        ;
+      }
+      100%{
+        ${this
+                    .property
+                    .type}: ${this
+                    .property
+                    .to};
+      }
+      }`;
+            }
+            get animation() {
+                let animationData = [
+                    this.animationDuration + "s",
+                    this.animationName,
+                    this.animationEase,
+                    "1s",
+                    "infinite",
+                    "both"
+                ];
+                return animationData.join(" ");
+            }
+        }
+
+        setUpAnimation(loopDuration);
+    })();
+</script>
