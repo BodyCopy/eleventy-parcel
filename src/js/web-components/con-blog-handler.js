@@ -15,7 +15,12 @@ export class ConBlogHandler extends LitElement {
   }
 
   static get styles() {
-    return css``
+    return css`
+    :host{
+      display: grid;
+      grid-row-gap: var(--grid-row-gap);
+    }
+    `
   }
 
   render() {
@@ -27,6 +32,13 @@ export class ConBlogHandler extends LitElement {
         : null}
       <p>Testing</p>
     `
+  }
+
+  addFig() {
+    let figCaptions = doc.querySelectorAll('figcaption')
+    for (let i = 0; i < figCaptions.length; i++) {
+      figCaptions[i].innerHTML = `<em>fig ${i + 1}. ` + figCaptions[i].innerHTML
+    }
   }
 
   firstUpdated() {

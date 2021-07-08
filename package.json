@@ -43,7 +43,7 @@
     "svg-sprite-generator": "^0.0.7"
   },
   "dependencies": {
-    "lit": "^2.0.0-rc.1",
+    "lit": "^2.0.0-rc.2",
     "lit-element": "^2.4.0"
   }
 }

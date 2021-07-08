@@ -10,6 +10,7 @@ export class ConProgressBar extends LitElement {
       .progress-bar {
         position: fixed;
         top: 0;
+        left:0;
         z-index: 9998;
         display: block;
         height: 0.25rem;

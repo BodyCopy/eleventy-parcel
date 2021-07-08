@@ -2,25 +2,24 @@
   <div slot="menu">
     <ul>
       {% for project in collections.project %}
-        <li>
-          <a class="" href="{{ project.url }}">{{ project.data.pageTitle }}</a>
-        </li>
+        {% set linkListItem = project %}
+        {% include "./linkListItem.njk" %}
       {% endfor %}
     </ul>
     <ul>
-      {% for page in collections.page %}
-        <li>
-          <a class="" href="{{ page.url }}">{{ page.data.pageTitle }}</a>
-        </li>
+      {% for myPage in collections.page %}
+        {% set linkListItem = myPage %}
+        {% include "./linkListItem.njk" %}
       {% endfor %}
     </ul>
+
     <ul>
       {% for blog in collections.blog %}
-        <li>
-          <a class="" href="{{ blog.url }}">{{ blog.data.pageTitle }}</a>
-        </li>
+        {% set linkListItem = blog %}
+        {% include "./linkListItem.njk" %}
       {% endfor %}
     </ul>
+
     <small>&copy;
     {{ metadata.author.name }}
       {{ page.date.getFullYear() }}

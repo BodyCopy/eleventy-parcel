@@ -3,14 +3,19 @@ layout: home.njk
 pageTitle: "Eleventy-Parcel"
 ---
 
-<h1>Hey</h1>
+<header>
+<div>
+<h1>Hey I'm Jon</h1>
+<p>My Name is Jon and I'm pretty cool you should send me a hire thanks</p>
+</div>
+<img src="/bike.jpg" alt="">
+</header>
 
 <section class="section-grid project-content">
-
-{% for project in collections.project %}
-    <h1>
-        <a href="{{project.url}}">{{project.data.pageTitle}}</a>
-    </h1>
-    <img src="{{project.data.pageHeader.image}}" alt="">
-{% endfor %}
+    {% for project in collections.project %}
+        <h1>
+            <a href="{{project.url}}">{{project.data.pageTitle}}</a>
+        </h1>
+        <img src="{{project.data.pageHeader.image}}" alt="">
+    {% endfor %}
 </section>

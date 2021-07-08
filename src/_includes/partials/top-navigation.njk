@@ -6,10 +6,9 @@
         <div class="nav-menu__item nav-menu__catagory">
             <h4 class="nav-menu__catagory-title">Blog</h4>
             <ul class="nav-menu__catagory-items">
-                {% for page in collections.page %}
-                    <li class="">
-                        <a class="" href="{{ page.url }}">{{ page.data.pageTitle }}</a>
-                    </li>
+                {% for myPage in collections.page %}
+                    {% set linkListItem = myPage %}
+                    {% include "./linkListItem.njk" %}
                 {% endfor %}
             </ul>
         </div>
@@ -17,14 +16,31 @@
             <h4 class="nav-menu__catagory-title">Work</h4>
             <ul class="nav-menu__catagory-items">
                 {% for project in collections.project %}
-                    <li class="">
-                        <a class="" href="{{ project.url }}">{{ project.data.pageTitle }}</a>
-                    </li>
+                    {% set linkListItem = project %}
+                    {% include "./linkListItem.njk" %}
                 {% endfor %}
             </ul>
         </div>
-        <h4 class="nav-menu__item"><a>About</a></h4>
-        <h4 class="nav-menu__item"><a>Contact</a></h4>
+        <h4 class="nav-menu__item">
+            <a>About</a>
+        </h4>
+        <h4 class="nav-menu__item">
+            <a>Contact</a>
+        </h4>
     </div>
-
+    <svg class="hamburger-menu" viewBox="0 0 80 80" width="40" height="40" fill="red">
+        <rect width="80" height="20" class="top"></rect>
+        <rect x="0" y="60" width="80" height="20" class="bottom"></rect>
+    </svg>
 </nav>
+
+<script>
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const navigationMenu = document.querySelector('.nav-menu');
+    console.log(hamburgerMenu, navigationMenu);
+    hamburgerMenu.addEventListener('click', () => {
+        navigationMenu.classList.toggle('slideIn');
+        //need some sort of handler to freeze everything when open
+    })
+    
+</script>

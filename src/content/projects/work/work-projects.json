@@ -1,0 +1,5 @@
+{
+  "layout": "project.njk",
+  "permalink": "Projects/Work/{{ pageTitle | slug }}/index.html",
+  "tags": "project"
+}

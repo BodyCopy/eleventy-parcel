@@ -8,7 +8,7 @@ import {
 export class ConHighlight extends LitElement {
   static get properties() {
     return {
-      myProp: { type: String },
+      type: { attribute: 'type', type: String },
     }
   }
 
@@ -49,6 +49,12 @@ export class ConHighlight extends LitElement {
     `
   }
 
+  highlightStyles = {
+    circle: '<svg></svg>',
+    underline: '<svg></svg>',
+    crossOut: '<svg></svg>'
+  }
+
   render() {
     return html`<slot></slot>
       <svg class="scribble-underline-path" width="100%" viewBox="0 0 143 8.89">
@@ -69,15 +75,12 @@ export class ConHighlight extends LitElement {
 
     let SVGElement = this.shadowRoot.querySelector('svg')
     PathDrawer(SVGElement)
-    console.log(SVGElement)
     let options = new ObserverOptions(null, 1, '0px 0px -40% 0px')
-    console.log(options)
 
     CreateObserverWithCallback(
       SVGElement,
       (e) => {
         let paths = e.target.querySelectorAll('path')
-        console.log(paths)
         if (e.isIntersecting === true) {
           paths.forEach((path) => {
             path.style.animation = `drawPath 2s ease forwards`

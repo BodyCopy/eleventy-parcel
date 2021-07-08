@@ -1,7 +1,9 @@
 import menu from './menu'
 import concordia from './web-components/concordia';
-import { topNavInteraction } from './interaction.js/topNav';
+import { topNavInteraction } from './interactions/topNav';
+import { shadowBox } from './interactions/shadowBox';
 
-topNavInteraction();
 concordia;
+topNavInteraction();
+shadowBox();
 menu()

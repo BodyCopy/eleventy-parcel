@@ -6,6 +6,7 @@
 @import '02-base/icons';
 
 @import '03-objects/richtext';
+@import '03-objects/image-display';
 
 @import '04-components/nav';
 @import '04-components/footer';
@@ -15,4 +16,6 @@
 @import '06-templates/project-template';
 @import '06-templates/home-template';
 
-@import '07-animations/animations';
+@import '07-embelishment/box-styles';
+
+@import '08-animations/animations';

@@ -2,26 +2,26 @@
 
 {% block content %}
   <con-blog-handler progress-bar footnotes class="project-content">
-  {% if pageHeader %}
-    <header class="page-header"style="background-image:url('{{pageHeader.image}}')">
-      {% if pageHeader.title %}
-        <h1>{{pageHeader.title | safe}}</h1>
-      {% endif %}
-    </header>
-  {% endif %}
-    <section class="intro section-grid">
-      <h1 class="section-heading">
-        <span class="sup-heading">{{tags}}</span>{{pageTitle}}
-      </h1>
-      <div class="date-wrapper">{{project.date}}</div>
-      {% if project.intro %}
-        <div class="body-copy">
-          <p>{{project.intro}}
-          </p>
-        </div>
-      {% endif %}
-    </section>
+    {% if pageHeader %}
+      <header class="page-header"style="background-image:url('{{pageHeader.image}}')">
+        {% if pageHeader.title %}
+          <h1>{{pageHeader.title | safe}}</h1>
+        {% endif %}
+      </header>
+    {% endif %}
     <article class="page-article">
+      <section class="intro section-grid">
+        <h1 class="section-heading">
+          <span class="sup-heading">{{tags}}</span>{{pageTitle}}
+        </h1>
+        <div class="date-wrapper">{{project.date}}</div>
+        {% if project.intro %}
+          <div class="body-copy">
+            <p>{{project.intro}}
+            </p>
+          </div>
+        {% endif %}
+      </section>
       {{ content | safe }}
     </article>
 

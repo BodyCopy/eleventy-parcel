@@ -31,12 +31,20 @@ export class ConFootnote extends LitElement {
         flex-direction: column;
       }
 
-      .close-button{
+      .close-button {
         align-self: end;
       }
 
       :host([visible='false']) {
         display: none;
+      }
+
+      @media (max-width: 600px) {
+        :host{
+          right: 0;
+          left: 0;
+          bottom: 0;
+        }
       }
     `
   }

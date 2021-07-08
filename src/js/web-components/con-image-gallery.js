@@ -9,7 +9,6 @@ export class ConImageGallery extends LitElement {
 
   constructor() {
     super()
-    
   }
 
   static get styles() {
@@ -18,6 +17,29 @@ export class ConImageGallery extends LitElement {
 
   render() {
     return html`<div>element name works!</div>`
+  }
+
+  sidePan() {
+    // window.scroll(x,y);
+    // window.scrollBy(dx,dy);
+    let imageWrapperThree = doc.querySelector('.image-wrapper.sidepan')
+    if (imageWrapperThree !== null) {
+      let scrollAmount = 0
+      let controllers = doc.querySelectorAll('.pan-controller')
+      controllers[0].addEventListener('click', (e) => {
+        scrollAmount = imageWrapperThree.scrollLeft
+        console.log(imageWrapperThree.scrollLeft)
+
+        scrollAmount += 1000
+        imageWrapperThree.scrollLeft = `${scrollAmount}`
+      })
+      controllers[1].addEventListener('click', (e) => {
+        scrollAmount = imageWrapperThree.scrollLeft
+        console.log(imageWrapperThree.scrollLeft)
+        scrollAmount -= 1000
+        imageWrapperThree.scrollLeft = `${scrollAmount}`
+      })
+    }
   }
 
   firstUpdated() {}

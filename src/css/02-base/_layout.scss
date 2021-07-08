@@ -8,24 +8,28 @@ body {
   font-display: swap;
 }
 
-header.page-header{
+header.page-header {
   background-position: center right;
   background-repeat: no-repeat;
   background-size: cover;
   height: 80vh;
 }
 
-main{
+main {
   background-color: blanchedalmond;
   width: 100%;
   min-height: calc(100vh - 58px); //nav-height
   z-index: 1;
+  --grid-row-gap: 200px;
 }
 
-article.page-article{
+article.page-article {
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 200px;
+  grid-row-gap: var(--grid-row-gap);
+  @media screen and(max-width: $mobileQuery) {
+    padding: 0 1rem;
+  }
 }
 
 //default repo styles below
@@ -49,11 +53,30 @@ article.page-article{
   }
 }
 
-  .sup-heading {
-    font-size: 0.3em;
-    line-height: 1em;
-    font-variation-settings: 'wght'400;
-    display: block;
-    margin-left: 0.18em;
-    margin-bottom: 1rem;
+.sup-heading {
+  font-size: 0.3em;
+  line-height: 1em;
+  font-variation-settings: 'wght' 400;
+  display: block;
+  margin-left: 0.18em;
+  margin-bottom: 1rem;
+}
+
+.grid {
+  display: grid;
+  &.one-one {
+    grid-template-columns: 1fr 1fr;
   }
+  &.one-one-one {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  &.one-three {
+    grid-template-columns: 1fr 3fr;
+  }
+  &.three-one {
+    grid-template-columns: 3fr 1fr;
+  }
+  &.repeat-auto {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}

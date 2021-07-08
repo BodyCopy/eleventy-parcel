@@ -1,0 +1,38 @@
+figure{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    max-width: max-content;
+}
+
+//used with shadowbox script
+.body-filter {
+  filter: blur(2px);
+  transition: filter 240ms ease-in;
+}
+
+.white-matte {
+  background-color: white;
+  padding: calc(2rem);
+}
+
+.black-matte {
+}
+
+//browser-window
+.browser-window {
+    overflow-y: scroll;
+    padding-top: 56.25%;
+    position: relative;
+    // cursor: url('./icons/'), auto;
+  
+    &>img {
+      max-height: none;
+      position: absolute;
+      top: 0;
+    }
+  }
+  
+  .browser-window-mobile {
+    padding-top: 169%;
+  }

@@ -1,5 +1,7 @@
 import { LitElement, html, css } from 'lit-element'
+import{ customElement } from 'lit/decorators.js'
 
+@customElement('con-input-field')
 export class ConInputField extends LitElement {
 
   static get properties() {

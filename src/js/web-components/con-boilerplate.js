@@ -1,15 +1,14 @@
 import { LitElement, html, css } from 'lit-element'
+import { customElement, property } from 'lit/decorators.js'
 
+@customElement('con-placeholder')
 export class PlaceHolder extends LitElement {
-  static get properties() {
-    return {
-      myProp: { type: String },
-    }
-  }
+
+  @property()
+  myProp = 'data'
 
   constructor() {
     super()
-    
   }
 
   static get styles() {

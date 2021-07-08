@@ -1,7 +1,8 @@
-html{
+html {
   --master-font: var(--font-ibm);
   --heading-font: var(--master-font);
 }
+
 body {
   font-family: var(--master-font);
 
@@ -62,4 +63,8 @@ a {
   &:focus {
     color: $bgDark;
   }
+}
+
+[aria-current='page'] {
+  color: red;
 }
